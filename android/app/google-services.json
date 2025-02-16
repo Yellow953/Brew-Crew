@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "880103538034",
+    "project_id": "brew-crew-de2e7",
+    "storage_bucket": "brew-crew-de2e7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880103538034:android:6848dfb00e808540ad31eb",
+        "android_client_info": {
+          "package_name": "dev.yellowtech.brew_crew"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrzalxL_xaiaMptCG0og9clUdl7jx5sVU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
