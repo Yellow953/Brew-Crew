@@ -1,4 +1,5 @@
 import 'package:brew_crew/services/auth.dart';
+import 'package:brew_crew/shared/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:brew_crew/shared/constants.dart';
 
@@ -20,10 +21,11 @@ class _SignInState extends State<SignIn> {
   String email = '';
   String password = '';
   String error = '';
+  bool loading = false;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return loading ? Loading() : Scaffold(
       backgroundColor: Colors.brown[100],
       appBar: AppBar(
         backgroundColor: Colors.brown[400],
@@ -82,10 +84,15 @@ class _SignInState extends State<SignIn> {
                 OutlinedButton(
                     onPressed: () async {
                       if (_formKey.currentState!.validate()){
+                        setState(() {
+                          loading = true;
+                        });
+
                         dynamic result = await _auth.loginWithEmailAndPassword(email, password);
                         if (result == null){
                           setState(() {
                             error = 'Invalid email or password...';
+                            loading = false;
                           });
                         }
                       }
