@@ -1,5 +1,6 @@
 import 'package:brew_crew/models/brew.dart';
 import 'package:brew_crew/screens/home/brew_list.dart';
+import 'package:brew_crew/screens/home/settings_form.dart';
 import 'package:brew_crew/services/auth.dart';
 import 'package:brew_crew/services/database.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,7 @@ class Home extends StatelessWidget {
                   vertical: 20,
                   horizontal: 60
               ),
-              child: Text('test'),
+              child: SettingsForm(),
             );
           }
       );
@@ -53,7 +54,15 @@ class Home extends StatelessWidget {
             ),
           ],
         ),
-        body: BrewList(),
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('coffee_bg.png'),
+              fit: BoxFit.cover,
+            ),
+          ),
+            child: BrewList()
+        ),
       ),
     );
   }
